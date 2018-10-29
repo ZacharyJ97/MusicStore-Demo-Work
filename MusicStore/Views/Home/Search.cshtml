@@ -1,0 +1,29 @@
+﻿@model List<MusicStore.Models.Album>
+
+@{
+    ViewBag.Title = "Search Results";
+
+}
+<h2>@ViewBag.Title</h2>
+
+@if (Model.Count == 0)
+{
+    <p> No Results Found</p>
+}
+else
+{
+    foreach (var album in Model.ToList())
+    {
+        string albumImage = album.Id + ".jpg";
+
+
+    <div class=" = "row searchResult"></div>
+        <div class="col-md-2">
+            <img src="~/Images/@albumImage" />
+        </div>
+        <div class="col-md-10">
+            <h2>@album.Title</h2>
+            <p>@album.Artist (@album.Year)</p>
+        </div>
+    }
+}

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel">
+            <div class="panel-heading text-center"><h2>Search Albums</h2></div>
+            <div class="panel-body">
+                <!-- Search to be performed by home controller-->
+                @using (Html.BeginForm("Search", "Home"))
+                {
+                    <div class="form-group">
+                        <label>Search By:</label>
+                        <select name="searchBy" id="searchBy" class="form-control">
+                            <option value="">Anything</option>
+                            <option value="Title">Title</option>
+                            <option value="Artist">Artist</option>
+                            <option value="Year">Year</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Search For:</label>
+                        <input type="text" id="searchText" name="searchText" class="form-control" />
+                    </div>
+
+                    <div class="text-center">
+                        <input class="btn btn-success" type="submit" value="Go!" />
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+
+</div>
